@@ -1,0 +1,86 @@
+
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Proyecto</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+          </li>  
+        </ul> 
+
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Buscar" required>
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+
+      </div>
+    </nav>
+
+    <br><br>
+
+	  <div class="container">
+
+	    <div class="starter-template">
+
+	      <div class="row">      	
+
+	        <div class="col-md-12 mt-5">
+
+            <h1>{{ titulo }} </h1>
+	    
+	          	<form [formGroup]="contacto" (ngSubmit)="onSubmit()">
+	          	  <div class="form-group">
+                        <label>Nombres y Apellidos</label>
+                        <input type="text" formControlName="nya" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.nya.errors }" />
+                        <div *ngIf="submitted && f.nya.errors" class="invalid-feedback">
+                            <div *ngIf="f.nya.errors.required">Por favor, ingresa tus Nombres y Apellidos</div>
+                        </div>
+                    </div>                    
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">El email es obligatorio</div>
+                            <div *ngIf="f.email.errors.email">Por favor, ingresa tu Email</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Asunto</label>
+                        <input type="text" formControlName="asunto" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.asunto.errors }" />
+                        <div *ngIf="submitted && f.asunto.errors" class="invalid-feedback">
+                            <div *ngIf="f.asunto.errors.required">Por favor, ingresa el Asunto</div>
+                        </div>
+                    </div>
+             
+                    <div class="form-group">
+  					          <label for="mensaje">Mensaje</label>
+  					          <textarea class="form-control" formControlName="mensaje" rows="3" [ngClass]="{ 'is-invalid': submitted && f.mensaje.errors }"></textarea>
+  					          <div *ngIf="submitted && f.mensaje.errors" class="invalid-feedback">
+                          <div *ngIf="f.mensaje.errors.required">Por favor, ingresa el Mensaje ( 6 Caracteres mínimo )</div>
+                      </div>
+					          </div>
+                    <div class="form-group">
+                        <button [disabled]="loading" class="btn btn-primary">Enviar</button>
+                    </div>
+				      </form>
+
+	        </div>
+
+
+	      </div>
+
+	    </div>
+
+	  </div> 
+
+
+	  <section class="credito">
+	      <div align="center">
+	         Juan nuñez
+	      </div> 
+	  </section>
