@@ -16,7 +16,7 @@ describe('AppComponent', () => {
   it(`should have as title 'Test-santander'`, async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('formulario-angular7-bootstrap4');
+    expect(app.title).toEqual('formulario-santander');
   }));
   it('should render title in a h1 tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
